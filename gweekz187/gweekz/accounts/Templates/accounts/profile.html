@@ -1,0 +1,18 @@
+{% extends "accounts/Main.html"%}
+{% load static %}
+{%block content%}
+
+
+{% for p in products %}
+    <img src="{{ p.image.url }}" width="500px"/>
+    
+{% endfor %}
+
+{%for product in products%}
+<h2>Coach: {{product.name}}</h2>
+{%endfor%}
+
+
+
+
+{%endblock content%}

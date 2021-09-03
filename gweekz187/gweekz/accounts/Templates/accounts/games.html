@@ -1,0 +1,46 @@
+{% extends "accounts/Main.html"%}
+{% load static %}
+{%block content%}
+
+{% for product in products%}
+
+<h2>Coach: {{product.name}}</h2>
+<h2>Descprition: {{product.description}}</h2>
+<h2>Price: {{product.price}}€</h2>
+
+
+<h2><tbody>
+{% for game in product.games.all %}
+<tr>
+<td>{{game.different_games}}</td>
+
+</tr>
+
+
+{%endfor%}
+{% for game in product.games.all %}
+    <img src="{{ game.image.url }}" width="500px"/>
+    
+{% endfor %}
+
+
+
+
+</tbody>
+</h2>
+
+
+<h2><tbody>
+{% for tag in product.tags.all %}
+<tr>
+<td>{{tag.caption}}</td>
+</tr>
+
+</h2>
+<h2>Max-Subscriptions: {{product.max_subscriptions}}</h2>
+</tbody>
+
+
+{% endfor %}
+{% endfor %}
+{%endblock content%}
